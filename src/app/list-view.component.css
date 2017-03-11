@@ -1,0 +1,17 @@
+.header {
+	padding: 10px;
+	background-color: #e3e3e3;
+}
+
+.table{
+	background-color: white;
+}
+
+.row {
+	padding: 10px;
+	border-bottom: 1px solid rgb(240,240, 240);
+}	
+
+.row:hover {
+	background-color: #e3e3e3;
+} 

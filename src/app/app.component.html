@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<div id="header">
+  <h1 class="header_item">{{title}}</h1>
+</div>
+<div id="desktop">
+  <side-nav [Lists]="movieLists" (sideNavClick)='onNotify($event)'></side-nav>
+  <list-view [List]="currentList" [Lists]="movieLists"></list-view>
+</div>
