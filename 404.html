@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FilmBoard</title>
+  <base href="/filmboard-frontend/">
+	<script>
+	  // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+	  (function(){
+	    var redirect = sessionStorage.redirect;
+	    delete sessionStorage.redirect;
+	    if (redirect && redirect != location.href) {
+	      history.replaceState(null, null, redirect);
+	    }
+	  })();
+	</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="styles.eaa5279e7ac97cf8584d.bundle.css" rel="stylesheet"/></head>
+<body>
+  <my-app>Loading...</my-app>
+<script type="text/javascript" src="inline.95e294270edfe14997a5.bundle.js"></script><script type="text/javascript" src="polyfills.0a9e642e0dfe8cdeb5e7.bundle.js"></script><script type="text/javascript" src="main.ce3ac66a3a4500746b9a.bundle.js"></script></body>
+</html>
