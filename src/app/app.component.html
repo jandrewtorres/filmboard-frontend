@@ -2,6 +2,21 @@
   <h1 class="header_item">{{title}}</h1>
 </div>
 <div id="desktop">
-  <side-nav [Lists]="movieLists" (sideNavClick)='onNotify($event)'></side-nav>
-  <list-view [List]="currentList" [Lists]="movieLists"></list-view>
+  <side-nav [Lists]="movieLists" (addListClick)='onAddList($event)' (sideNavClick)='onNotify($event)'></side-nav>
+  <div class="modaltable">
+  <app-modal>
+    <div class="app-modal-header">
+      Add Movie List
+    </div>
+    <div class="app-modal-body">
+      <input placeholder="List Name">
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal.hide()">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-modal>
+  <list-view [List]="currentList" [Lists]="movieLists">  
+  </list-view>
+  </div>
 </div>
