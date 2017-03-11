@@ -1,6 +1,33 @@
 .header {
-	padding: 10px;
 	background-color: #e3e3e3;
+	width: calc(100% - 20);
+	display: flex;
+}
+
+h3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	padding-left: 12px;
+}
+
+button{
+	width: 43px;
+	font-size: 16px;
+	border: none;
+	background-color: green;
+	color: white;
+}
+
+input {
+	width: 250px;
+}
+
+.subheader {
+	display: flex;
+	flex-direction: row;
+	margin-left: auto;
 }
 
 .table{

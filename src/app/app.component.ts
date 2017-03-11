@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SideNav } from './side-nav.component';
 import { MovieList } from './MovieList';
 import { MovieService } from './movie.service';
-import { ModalComponent } from './modal.component';
 
 @Component({
   moduleId: module.id,
@@ -16,9 +15,7 @@ export class AppComponent implements OnInit {
   title = 'FilmBoard';
   movieLists: MovieList[];
   currentList: MovieList;
-
-  @ViewChild(ModalComponent)
-  public readonly modal: ModalComponent;
+  newListInput: number;
 
   constructor(private movieService: MovieService) {
     this.currentList = new MovieList;
@@ -61,7 +58,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onAddList(): void {
-    this.modal.show();
+  onAddList(name: string): void {
+    this.movieService.create(name);
+    var newList = new MovieList;
+    newList.name = name;
+    newList.movies = [];
+    this.movieLists.push(newList);
   }
 }

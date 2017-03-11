@@ -27,6 +27,24 @@ export class MovieService {
       .catch(this.handleError);
   }
 
+  addMovie(cat: string, name: string ): Promise<MovieList> {
+    console.log(name);
+  return this.http
+    .post(`${this.moviesUrl}/${cat}/add/?name=${name}`, [JSON.stringify({cat: cat}), JSON.stringify({name: name})])
+    .toPromise()
+    .then(res => res.json())
+    .catch(this.handleError);
+  }
+
+  create(name: string): Promise<MovieList> {
+    console.log(name);
+  return this.http
+    .post(`${this.moviesUrl}/add/${name}`, JSON.stringify({name: name}))
+    .toPromise()
+    .then(res => res.json())
+    .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

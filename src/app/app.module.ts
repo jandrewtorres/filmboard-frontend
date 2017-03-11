@@ -5,7 +5,6 @@ import { SideNav } from './side-nav.component';
 import { ListView } from './list-view.component'
 import { HttpModule }    from '@angular/http';
 
-import { ModalComponent } from './modal.component';
 import { AppComponent }  from './app.component';
 import { MovieService }   from './movie.service';
 
@@ -19,7 +18,6 @@ import { MovieService }   from './movie.service';
     AppComponent,
     SideNav,
     ListView,
-    ModalComponent,
   ],
   bootstrap: [ 
     AppComponent

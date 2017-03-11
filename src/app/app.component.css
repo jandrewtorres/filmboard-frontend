@@ -9,12 +9,6 @@
 	color: white;
 }
 
-app-modal {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-}
-
 #desktop {
 	display: flex;
 	height: calc(100vh - 50px);

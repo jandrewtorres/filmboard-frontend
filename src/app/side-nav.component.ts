@@ -6,9 +6,9 @@ import { MovieList } from './MovieList';
   selector: 'side-nav',
   template: `
     <div class="side-nav-container grey-background">
-    <div class="header">
       <h3 (click)="onSelect()" class="text-center head-background">Lists</h3>
-      <button (click)="onAddList()"> + </button>
+    <div class="header">
+      <input [(ngModel)]="listToAdd" placeholder="newList"><button (click)="onAddList()"> + </button>
     </div>
       <div [class.selected]="list === currentList" class="side-nav-item" *ngFor="let list of Lists">
         <h4 (click)="onSelect(list)">{{list.name}}</h4>
@@ -24,8 +24,9 @@ export class SideNav {
   @Input() Lists: MovieList[];
 
   @Output() sideNavClick: EventEmitter<MovieList> = new EventEmitter<MovieList>();
-  @Output() addListClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() addListClick: EventEmitter<string> = new EventEmitter<string>();
   currentList: MovieList;
+  listToAdd: string;
   
   onSelect(list: MovieList) {
     this.currentList = list;
@@ -33,6 +34,6 @@ export class SideNav {
   }
 
   onAddList() {
-    this.addListClick.emit();
+    this.addListClick.emit(this.listToAdd);
   }
 }
