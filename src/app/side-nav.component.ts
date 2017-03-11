@@ -5,10 +5,10 @@ import { MovieList } from './MovieList';
   moduleId: module.id,
   selector: 'side-nav',
   template: `
-    <div class="side-nav-container grey-background">
+    <div class="side-nav-container grey-background capitalize">
       <h3 (click)="onSelect()" class="text-center head-background">Lists</h3>
     <div class="header">
-      <input [(ngModel)]="listToAdd" placeholder="newList"><button (click)="onAddList()"> + </button>
+      <input [(ngModel)]="listToAdd" placeholder="New List Title"><button (click)="onAddList()"> + </button>
     </div>
       <div [class.selected]="list === currentList" class="side-nav-item" *ngFor="let list of Lists">
         <h4 (click)="onSelect(list)">{{list.name}}</h4>

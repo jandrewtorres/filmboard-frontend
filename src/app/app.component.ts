@@ -59,10 +59,12 @@ export class AppComponent implements OnInit {
   }
 
   onAddList(name: string): void {
-    this.movieService.create(name);
-    var newList = new MovieList;
-    newList.name = name;
-    newList.movies = [];
-    this.movieLists.push(newList);
+    if(name) {
+      this.movieService.create(name);
+      var newList = new MovieList;
+      newList.name = name;
+      newList.movies = [];
+      this.movieLists.push(newList);
+    }
   }
 }

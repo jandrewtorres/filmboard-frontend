@@ -7,11 +7,11 @@ import { MovieService } from './movie.service';
   moduleId: module.id,
   selector: 'list-view',
   template: `
-    <div *ngIf="List">
+    <div class="contain capitalize" *ngIf="List">
       <div class="header"> 
         <h3>{{List.name}}</h3>
         <div class="subheader">
-          <input [(ngModel)]="movieToPost" placeholder="newList">
+          <input [(ngModel)]="movieToPost" placeholder="New Movie Title">
           <button (click)="onAddMovie()"> + </button>
         </div>
       </div>
@@ -35,9 +35,12 @@ export class ListView {
   constructor(private movieService: MovieService) { }
 
   onAddMovie() {
-    this.movieService.addMovie(this.List.name, this.movieToPost);
-    var newMovie = new Movie;
-    newMovie.name = this.movieToPost;
-    this.List.movies.push(newMovie);
+    console.log(this.List.name);
+    if(this.movieToPost && this.List.name != 'All Movies') {
+      this.movieService.addMovie(this.List.name, this.movieToPost);
+      var newMovie = new Movie;
+      newMovie.name = this.movieToPost;
+      this.List.movies.push(newMovie);
+    }
   }
 } 
