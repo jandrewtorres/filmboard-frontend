@@ -1,0 +1,17 @@
+<div class="contain capitalize">
+
+  <div class="header"> 
+    <h3>{{list.name}}</h3>
+    <div class="subheader">
+      <input [(ngModel)]="movieToPost" placeholder="New Movie Title">
+      <button class="green" (click)="onAddMovie()"> + </button>
+    </div>
+  </div>
+
+  <div class="table">
+    <div class="row" *ngFor="let movie of list.movies; let i = index;">
+      <h4>{{i + 1}}</h4><h4>{{movie.name}}</h4> <button class="delete" (click)="onDeleteMovie(movie)"> - </button>
+    </div>
+  </div>
+
+</div>

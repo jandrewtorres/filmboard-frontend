@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SideNav } from './side-nav.component';
 import { MovieList } from './MovieList';
 import { MovieService } from './movie.service';
@@ -30,11 +30,13 @@ export class AppComponent implements OnInit {
     var all = new MovieList;
     all.name = 'All Movies';
     all.movies = [];
-    lists.forEach(movieList => {
-      movieList['movies'].forEach(movie => {
-        all.movies.push(movie);
+    if(lists) {
+      lists.forEach(movieList => {
+        movieList['movies'].forEach(movie => {
+          all.movies.push(movie);
+        })
       })
-    })
+    }
     this.currentList = all;
   }
 
@@ -49,7 +51,7 @@ export class AppComponent implements OnInit {
       })
   }
 
-  onNotify(message: MovieList):void {
+  onChangeList(message: MovieList):void {
     if(message) {
       this.currentList = message;
     }
@@ -61,10 +63,6 @@ export class AppComponent implements OnInit {
   onAddList(name: string): void {
     if(name) {
       this.movieService.create(name);
-      var newList = new MovieList;
-      newList.name = name;
-      newList.movies = [];
-      this.movieLists.push(newList);
     }
   }
 }

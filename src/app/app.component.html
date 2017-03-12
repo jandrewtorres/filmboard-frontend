@@ -2,8 +2,7 @@
   <h1 class="header_item">{{title}}</h1>
 </div>
 <div id="desktop">
-  <side-nav [Lists]="movieLists" (addListClick)='onAddList($event)' (sideNavClick)='onNotify($event)'></side-nav>
-
-  <list-view [List]="currentList" [Lists]="movieLists">  
+  <side-nav [lists]="movieLists" (addListClick)='onAddList($event)' (sideNavClick)='onChangeList($event)'></side-nav>
+  <list-view [list]="currentList" [lists]="movieLists">  
   </list-view>
 </div>
