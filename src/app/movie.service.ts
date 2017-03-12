@@ -45,6 +45,22 @@ export class MovieService {
     .catch(this.handleError);
   }
 
+  deleteMovie(name: string, cat: string ): Promise<void> {
+    const url = `${this.moviesUrl}/${cat}/${name}`;
+    return this.http.delete(url)
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+  deleteList(name: string): Promise<void> {
+    const url = `${this.moviesUrl}/${name}`;
+    return this.http.delete(url)
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

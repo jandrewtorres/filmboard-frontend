@@ -12,12 +12,12 @@ import { MovieService } from './movie.service';
         <h3>{{List.name}}</h3>
         <div class="subheader">
           <input [(ngModel)]="movieToPost" placeholder="New Movie Title">
-          <button (click)="onAddMovie()"> + </button>
+          <button class="green" (click)="onAddMovie()"> + </button>
         </div>
       </div>
       <div class="table">
-        <div class="row" *ngFor="let movie of List.movies">
-          <h4>{{movie.name}}</h4>
+        <div class="row" *ngFor="let movie of List.movies; let i = index;">
+          <h4>{{i}}</h4><h4>{{movie.name}}</h4> <button class="delete" (click)="onDeleteMovie(movie)"> - </button>
         </div>
       </div>
     </div>
@@ -43,4 +43,9 @@ export class ListView {
       this.List.movies.push(newMovie);
     }
   }
+
+  onDeleteMovie(movie: Movie): void {
+      this.List.movies = this.List.movies.filter(m => m !== movie);
+  }
+
 } 

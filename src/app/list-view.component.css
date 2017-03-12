@@ -7,7 +7,6 @@
 .contain {
 	height: 100%;
 	overflow-y: scroll;
-
 }
 
 h3 {
@@ -18,12 +17,36 @@ h3 {
 	padding-left: 12px;
 }
 
-button{
+h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 12px;
+}
+
+button.green{
 	width: 43px;
 	font-size: 16px;
 	border: none;
 	background-color: green;
 	color: white;
+}
+
+button.delete {
+	color: red;
+	background-color: white;
+	margin-left: auto;
+	margin-right: 12px;
+	border: none;
+	width: 38px;
+}
+
+.row:hover button.delete:hover {
+	background-color: white;
+	cursor: pointer;
+}
+
+.row:hover button.delete {
+	background-color: #e3e3e3;
 }
 
 input {
@@ -41,8 +64,10 @@ input {
 }
 
 .row {
-	padding: 10px;
 	border-bottom: 1px solid rgb(240,240, 240);
+	display: flex;
+	flex-flow: row wrap;
+	height: 100%;
 }	
 
 .row:hover {
