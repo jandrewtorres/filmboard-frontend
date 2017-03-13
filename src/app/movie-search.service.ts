@@ -16,7 +16,7 @@ export class MovieSearch {
 
     search(term: string): Observable<OmniMovie[]> {
       return this.http
-                 .get('http://www.omdbapi.com/?s=' + term)
+                 .get('https://www.omdbapi.com/?s=' + term)
                  .map(response => response.json()['Search'] as OmniMovie[])
     }
 }
