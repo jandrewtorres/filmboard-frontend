@@ -3,14 +3,14 @@
   <div class="header"> 
     <h3>{{list.name}}</h3>
     <div class="subheader">
-      <movie-search #moviesearch (addMovieClick)="onAddMovie($event)" [category]="list.name"></movie-search>
+      <movie-search #moviesearch (addMovieClick)="onAddMovie($event)" [category]="list.name" *ngIf="list.name != 'All Movies'"></movie-search>
       <!--<input [(ngModel)]="movieToPost" placeholder="New Movie Title"> -->
     </div>
   </div>
 
   <div class="table">
     <div class="row" *ngFor="let movie of list.movies; let i = index;">
-      <h4>{{i + 1}}</h4><h4>{{movie.name}}</h4> <button class="delete" (click)="onDeleteMovie(movie)"> - </button>
+      <h4>{{i + 1}}</h4><h4>{{movie.name}}</h4> <button class="delete" (click)="onDeleteMovie(movie)" *ngIf="list.name != 'All Movies'"> - </button>
     </div>
   </div>
 

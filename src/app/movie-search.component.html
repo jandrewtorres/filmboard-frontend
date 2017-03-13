@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="search-container">
-	<input #searchBox [(ngModel)]="inputVal" (keyup)="search(searchBox.value)" />
+	<input #searchBox [(ngModel)]="inputVal" (keyup)="search(searchBox.value)" placeholder="New Movie Title" />
 	<div>
 		<div *ngFor="let movie of moviesArr"
 		     (click)="setInput(movie.Title)" class="search-result" >
