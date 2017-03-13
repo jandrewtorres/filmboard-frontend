@@ -18,17 +18,9 @@ h3 {
 }
 
 h4 {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 12px;
+	margin-bottom: 12px;
 	padding-left: 12px;
-}
-
-button.green{
-	width: 43px;
-	font-size: 16px;
-	border: none;
-	background-color: green;
-	color: white;
 }
 
 button.delete {
@@ -43,14 +35,17 @@ button.delete {
 .row:hover button.delete:hover {
 	background-color: white;
 	cursor: pointer;
+
 }
 
 .row:hover button.delete {
 	background-color: #e3e3e3;
 }
 
-input {
-	width: 250px;
+movie-search {
+	position: absolute;
+	z-index: 100;
+	right: 0px;
 }
 
 .subheader {

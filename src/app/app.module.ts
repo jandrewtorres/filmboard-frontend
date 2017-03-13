@@ -7,6 +7,8 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { MovieService }   from './movie.service';
+import { MovieSearchComponent } from './movie-search.component';
+import { MovieSearch } from './movie-search.service';
 
 @NgModule({
   imports: [
@@ -18,11 +20,12 @@ import { MovieService }   from './movie.service';
     AppComponent,
     SideNav,
     ListView,
+    MovieSearchComponent,
   ],
   bootstrap: [ 
     AppComponent
   ],
-  providers: [ MovieService ]
+  providers: [ MovieService, MovieSearch ]
 })
 
 export class AppModule { }

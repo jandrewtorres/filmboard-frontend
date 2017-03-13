@@ -3,8 +3,8 @@
   <div class="header"> 
     <h3>{{list.name}}</h3>
     <div class="subheader">
-      <input [(ngModel)]="movieToPost" placeholder="New Movie Title">
-      <button class="green" (click)="onAddMovie()"> + </button>
+      <movie-search #moviesearch (addMovieClick)="onAddMovie($event)" [category]="list.name"></movie-search>
+      <!--<input [(ngModel)]="movieToPost" placeholder="New Movie Title"> -->
     </div>
   </div>
 

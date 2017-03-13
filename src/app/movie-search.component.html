@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="search-container">
+	<input #searchBox [(ngModel)]="inputVal" (keyup)="search(searchBox.value)" />
+	<div>
+		<div *ngFor="let movie of moviesArr"
+		     (click)="setInput(movie.Title)" class="search-result" >
+		  {{movie.Title}}
+		</div>
+	</div>
+	</div>
+	<button class="green" (click)="onAddMovie()"> + </button>
+</div>

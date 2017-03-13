@@ -1,0 +1,37 @@
+.search-result{
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-result:hover {
+  color: #eee;
+  background-color: #607D8B;
+}
+
+input {
+  height: 47px;
+  width: 100%;
+}
+
+button.green{
+  width: 43px;
+  height: 47px;
+  font-size: 16px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+.container {
+  display: flex;
+  width: 343px;
+  padding: 0;
+}
+
+.search-container {
+  width: 300px;
+}

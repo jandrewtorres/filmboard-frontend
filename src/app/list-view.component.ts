@@ -2,13 +2,15 @@ import { Component, Input } from '@angular/core';
 import { MovieList } from './MovieList';
 import { Movie } from './Movie';
 import { MovieService } from './movie.service';
+import { MovieSearchComponent } from './movie-search.component';
+import { MovieSearch } from './movie-search.service';
 
 @Component({
   moduleId: module.id,
   selector: 'list-view',
   templateUrl: 'list-view.component.html',
   styleUrls: ['./list-view.component.css'],
-  providers: [ MovieService ]
+  providers: [ MovieService, MovieSearch ]
 })
 
 export class ListView {
@@ -19,18 +21,15 @@ export class ListView {
 
   constructor(private movieService: MovieService) { }
 
-  onAddMovie() {
-    console.log(this.list.name);
-    if(this.movieToPost && this.list.name != 'All Movies') {
-      this.movieService.addMovie(this.list.name, this.movieToPost);
-      var newMovie = new Movie;
-      newMovie.name = this.movieToPost;
-      this.list.movies.push(newMovie);
-    }
+  onDeleteMovie(movie: Movie): void {
+    this.movieService.deleteMovie(movie.name, this.list.name);
+    this.list.movies = this.list.movies.filter(m => m !== movie);
   }
 
-  onDeleteMovie(movie: Movie): void {
-      this.list.movies = this.list.movies.filter(m => m !== movie);
+  onAddMovie(movie: string) {
+    var newMovie = new Movie;
+    newMovie.name = movie;
+    this.list.movies.push(newMovie);
   }
 
 } 

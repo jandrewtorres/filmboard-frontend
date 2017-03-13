@@ -29,7 +29,8 @@ export class SideNav {
   }
 
   onAddList() {
-    this.addListClick.emit(this.listToAdd); 
+    if(this.listToAdd) {
+      this.addListClick.emit(this.listToAdd); 
       var newList = new MovieList;
       newList.name = this.listToAdd;
       newList.movies = [];
@@ -37,6 +38,7 @@ export class SideNav {
         this.lists = [];
       }
       this.lists.push(newList);
+    }
   }
 
   onTableDelete(name: string) {
